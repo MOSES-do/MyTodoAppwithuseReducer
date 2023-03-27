@@ -1,0 +1,14 @@
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: .2rem;
+  column-gap: .2rem;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #000;
+  height: 50px;
+  width: 50px;
+}
