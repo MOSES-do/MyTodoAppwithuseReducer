@@ -1,4 +1,4 @@
-import { ACTIONS } from '../App'
+import { ACTIONS } from '../ThemeContext'
 
 const ListItems = ({ todo, dispatch }) => {
     // console.log(todo);

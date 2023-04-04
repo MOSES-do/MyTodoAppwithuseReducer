@@ -1,20 +1,20 @@
-import { ACTIONS } from '../App'
+import { ACTIONS } from '../ThemeContext'
+import { useStateObj, updateDispatch } from '../ThemeContext'
 
+const AddItem = () => {
 
-const AddItem = ({ item, dispatch }) => {
+    const { item } = useStateObj();
+    const dispatch = updateDispatch();
+
 
     const handleSubmit = () => {
         if (!item) return;
         //currently we don't have access to the name state, so we use a payload to get access in the reducer
         dispatch({ type: ACTIONS.ADD_TODO, payload: { item: item } })
-
-        dispatch({ type: ACTIONS.RESET_INPUT, payload: "" })
-
     }
 
 
     return (
-
         <form onSubmit={(e) => handleSubmit(e.preventDefault())}>
             <label htmlFor="addItem">Add Item</label>
             <input type="text" name="addItem" value={item}
@@ -22,6 +22,7 @@ const AddItem = ({ item, dispatch }) => {
             /> {' '}
             <button onClick={handleSubmit}>submit</button>
         </form>
+
     )
 }
 
